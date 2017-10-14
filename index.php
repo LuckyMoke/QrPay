@@ -31,7 +31,7 @@ if (strpos($ua, 'Alipay')) {
         "new"  => 1,
     );
 } elseif (strpos($ua, 'QQ/')) {
-    //微信
+    //QQ
     $config = array(
         "url"  => "http://vac.qq.com/wallet/qrcode.htm?m=tenpay&a=1&u=839488083&ac=7B411D7D0588EBECADFAF6E63B7619DE1B6906DDFD7C1B9919FF8442F8A7C5C0&n=%E5%B0%8F%E5%B0%8F%E9%85%A5&f=wallet",
         "text" => "长按二维码付款",
