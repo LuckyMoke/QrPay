@@ -14,7 +14,7 @@ if (@$_GET['a'] == 'qrcode') {
     }
 }
 include "config.php";
-$http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://';   
+$http_type = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https') || (isset($_SERVER['HTTP_X_CLIENT_SCHEME']) && $_SERVER['HTTP_X_CLIENT_SCHEME'] == 'https')) ? 'https://' : 'http://';
 $url   = $http_type . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $url   = strstr($url, '?') ? $url . '&' : $url . '?';
 $urlqr = $url . 'a=qrcode&text=';
